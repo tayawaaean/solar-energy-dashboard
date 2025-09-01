@@ -48,11 +48,15 @@ export default function LoginPage() {
       >
         <Card className="bg-white/95 dark:bg-solar-dark-800/95 backdrop-blur-sm border-0 shadow-2xl">
           <CardHeader className="text-center pb-6">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-solar-gradient rounded-2xl flex items-center justify-center">
-                <Sun className="w-8 h-8 text-solar-dark-800 dark:text-white" />
-              </div>
-            </div>
+                         <div className="flex justify-center mb-4">
+               <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden">
+                 <img 
+                   src="/logo.png" 
+                   alt="SolarFarm Logo" 
+                   className="w-full h-full object-cover"
+                 />
+               </div>
+             </div>
             <CardTitle className="text-2xl font-bold text-solar-dark-800 dark:text-white">
               SolarFarm Dashboard
             </CardTitle>

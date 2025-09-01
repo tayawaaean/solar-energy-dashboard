@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   description: "Professional solar energy monitoring dashboard with real-time analytics, device management, and comprehensive reporting.",
   keywords: "solar energy, monitoring, dashboard, renewable energy, analytics",
   authors: [{ name: "SolarFarm Team" }],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/logo.png',
+  },
 };
 
 export const viewport = {

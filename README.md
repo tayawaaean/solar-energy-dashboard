@@ -30,6 +30,7 @@ A modern, comprehensive solar energy monitoring dashboard built with Next.js 15,
 - **Help & Support**: Built-in documentation and support system
 - **Notifications**: Real-time alerts and system notifications
 - **Search Functionality**: Global search across all sections
+- **Custom Branding**: Integrated logo and favicon support
 
 ## 🚀 **Tech Stack**
 

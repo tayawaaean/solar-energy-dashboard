@@ -175,8 +175,12 @@ const Sidebar = memo(function Sidebar() {
                 animate={{ opacity: collapsed ? 0 : 1 }}
                 className="flex items-center space-x-3"
               >
-                <div className="w-10 h-10 bg-solar-gradient rounded-xl flex items-center justify-center shadow-lg">
-                  <Sun className="w-6 h-6 text-solar-dark-800" />
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shadow-lg overflow-hidden">
+                  <img 
+                    src="/logo.png" 
+                    alt="SolarFarm Logo" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div>
                   <span className="font-bold text-lg">SolarFarm</span>
