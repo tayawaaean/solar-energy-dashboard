@@ -10,18 +10,17 @@ const nextConfig: NextConfig = {
   },
   
   // Enable SWC minification for faster builds
-  swcMinify: true,
+  // swcMinify is enabled by default in Next.js 15
   
   // Optimize bundle size
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    // Reduce compilation overhead in development
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
+  },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
       },
     },
   },

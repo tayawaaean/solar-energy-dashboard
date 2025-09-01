@@ -155,15 +155,15 @@ export default function LoginPage() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-sm text-solar-dark-600 dark:text-solar-dark-400">
-                Don't have an account?{' '}
-                <Link
-                  href="/register"
-                  className="text-solar-yellow-500 hover:text-solar-yellow-600 font-medium"
-                >
-                  Sign up
-                </Link>
-              </p>
+                              <p className="text-sm text-solar-dark-600 dark:text-solar-dark-400">
+                  Don&apos;t have an account?{' '}
+                  <Link
+                    href="/register"
+                    className="text-solar-yellow-500 hover:text-solar-yellow-600 font-medium"
+                  >
+                    Sign up
+                  </Link>
+                </p>
             </div>
           </CardContent>
         </Card>

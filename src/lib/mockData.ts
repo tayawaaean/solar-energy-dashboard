@@ -34,7 +34,7 @@ export const mockEnergyConsumption: EnergyConsumption[] = Array.from({ length: 2
   timestamp: new Date(Date.now() - (23 - i) * 60 * 60 * 1000),
   power: Math.random() * 8 + 2, // 2-10 kW
   energy: Math.random() * 1.5 + 0.3, // 0.3-1.8 kWh per hour
-  source: ['pump', 'lighting', 'appliances', 'other'][Math.floor(Math.random() * 4)] as any,
+  source: ['pump', 'lighting', 'appliances', 'other'][Math.floor(Math.random() * 4)] as 'pump' | 'lighting' | 'appliances' | 'other',
 }));
 
 // Generate mock devices data
@@ -131,7 +131,7 @@ export const mockWeatherData: WeatherData = {
   forecast: Array.from({ length: 7 }, (_, i) => ({
     date: new Date(Date.now() + i * 24 * 60 * 60 * 1000),
     temperature: Math.random() * 20 + 15, // 15-35°C
-    condition: ['sunny', 'cloudy', 'rainy', 'partly_cloudy'][Math.floor(Math.random() * 4)] as any,
+    condition: ['sunny', 'cloudy', 'rainy', 'partly_cloudy'][Math.floor(Math.random() * 4)] as 'sunny' | 'cloudy' | 'rainy' | 'partly_cloudy',
     solarIrradiance: Math.random() * 1000 + 200, // 200-1200 W/m²
   })),
 };
