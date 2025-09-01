@@ -86,7 +86,7 @@ export default function DashboardPage() {
   ];
 
   return (
-    <div className="space-y-6">
+      <div className="space-y-6">
         {/* Enhanced Header with Real-time Info */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

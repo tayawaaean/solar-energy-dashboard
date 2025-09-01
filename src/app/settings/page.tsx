@@ -115,14 +115,14 @@ export default function SettingsPage() {
           transition={{ duration: 0.5 }}
           className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-2"
         >
-          <div>
-            <h1 className="text-3xl font-bold text-solar-dark-800 dark:text-white">
+            <div>
+              <h1 className="text-3xl font-bold text-solar-dark-800 dark:text-white">
               System Settings
-            </h1>
+              </h1>
             <p className="text-solar-dark-600 dark:text-solar-dark-300 mt-1">
               Configure your solar energy system preferences and account settings
-            </p>
-          </div>
+              </p>
+            </div>
           <div className="flex items-center space-x-3">
             <Button
               variant="outline"
@@ -148,7 +148,7 @@ export default function SettingsPage() {
               {isSaving ? (
                 <RefreshCw className="w-4 h-4 animate-spin" />
               ) : (
-                <Save className="w-4 h-4" />
+              <Save className="w-4 h-4" />
               )}
               <span>{isSaving ? 'Saving...' : 'Save Changes'}</span>
             </Button>
@@ -478,8 +478,8 @@ export default function SettingsPage() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="mt-4"
         >
-          <Card>
-            <CardHeader>
+            <Card>
+              <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <Settings className="w-5 h-5 text-solar-amber-500" />
@@ -493,8 +493,8 @@ export default function SettingsPage() {
                   {showAdvanced ? <ChevronDown className="w-4 h-4" /> : <ChevronRight className="w-4 h-4" />}
                   <span>{showAdvanced ? 'Hide' : 'Show'}</span>
                 </Button>
-              </CardTitle>
-            </CardHeader>
+                </CardTitle>
+              </CardHeader>
             <AnimatePresence>
               {showAdvanced && (
                 <motion.div
@@ -511,8 +511,8 @@ export default function SettingsPage() {
                           <Lock className="w-4 h-4" />
                           <span>Security</span>
                         </h3>
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between">
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
                             <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Two-Factor Authentication</span>
                             <Button
                               variant={security.twoFactor ? "default" : "outline"}
@@ -521,8 +521,8 @@ export default function SettingsPage() {
                             >
                               {security.twoFactor ? 'Enabled' : 'Disabled'}
                             </Button>
-                          </div>
-                          <div className="flex items-center justify-between">
+                  </div>
+                  <div className="flex items-center justify-between">
                             <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Session Timeout (minutes)</span>
                             <select
                               value={security.sessionTimeout}
@@ -534,9 +534,9 @@ export default function SettingsPage() {
                               <option value={60}>60</option>
                               <option value={120}>120</option>
                             </select>
-                          </div>
-                        </div>
-                      </div>
+                  </div>
+                    </div>
+                  </div>
 
                       <div className="space-y-4">
                         <h3 className="font-medium text-solar-dark-800 dark:text-white flex items-center space-x-2">
@@ -556,30 +556,30 @@ export default function SettingsPage() {
                             <Trash2 className="w-4 h-4 mr-2" />
                             Clear Cache
                           </Button>
-                        </div>
-                      </div>
                     </div>
-                  </CardContent>
+                  </div>
+                </div>
+              </CardContent>
                 </motion.div>
               )}
             </AnimatePresence>
-          </Card>
-        </motion.div>
+            </Card>
+          </motion.div>
 
         {/* System Information */}
-        <motion.div
+          <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mt-4"
         >
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center space-x-2">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center space-x-2">
                 <Info className="w-5 h-5 text-solar-blue-500" />
                 <span>System Information</span>
-              </CardTitle>
-            </CardHeader>
+                </CardTitle>
+              </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="p-4 border border-solar-dark-200 dark:border-solar-dark-700 rounded-lg">
@@ -629,24 +629,24 @@ export default function SettingsPage() {
                     <span>Performance</span>
                   </h3>
                   <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
+                <div className="flex justify-between">
                       <span className="text-solar-dark-600 dark:text-solar-dark-300">CPU Usage:</span>
                       <span className="text-solar-dark-800 dark:text-white">12%</span>
-                    </div>
-                    <div className="flex justify-between">
+                </div>
+                <div className="flex justify-between">
                       <span className="text-solar-dark-600 dark:text-solar-dark-300">Memory:</span>
                       <span className="text-solar-dark-800 dark:text-white">45%</span>
-                    </div>
-                    <div className="flex justify-between">
+                </div>
+                <div className="flex justify-between">
                       <span className="text-solar-dark-600 dark:text-solar-dark-300">Network:</span>
                       <span className="text-solar-dark-800 dark:text-white">2.1 MB/s</span>
                     </div>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
   );
 }

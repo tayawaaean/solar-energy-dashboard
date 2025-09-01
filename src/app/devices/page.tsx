@@ -174,7 +174,7 @@ export default function DevicesPage() {
 
 
   return (
-    <div className="space-y-6">
+      <div className="space-y-6">
         {/* Enhanced Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -182,22 +182,22 @@ export default function DevicesPage() {
           transition={{ duration: 0.5 }}
           className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4"
         >
-          <div>
-            <h1 className="text-3xl font-bold text-solar-dark-800 dark:text-white">
-              Device Management
-            </h1>
-            <p className="text-solar-dark-600 dark:text-solar-dark-300 mt-2">
-              Monitor and control all connected devices in your solar energy system
-            </p>
-          </div>
-          <div className="flex items-center space-x-3">
+            <div>
+              <h1 className="text-3xl font-bold text-solar-dark-800 dark:text-white">
+                Device Management
+              </h1>
+              <p className="text-solar-dark-600 dark:text-solar-dark-300 mt-2">
+                Monitor and control all connected devices in your solar energy system
+              </p>
+            </div>
+            <div className="flex items-center space-x-3">
             <Button
               variant="outline"
               className="flex items-center space-x-2"
             >
-              <RefreshCw className="w-4 h-4" />
-              <span>Refresh</span>
-            </Button>
+                <RefreshCw className="w-4 h-4" />
+                <span>Refresh</span>
+              </Button>
             <Button className="flex items-center space-x-2">
               <Plus className="w-4 h-4" />
               <span>Add Device</span>
@@ -347,17 +347,17 @@ export default function DevicesPage() {
             />
           </div>
           <div className="flex items-center space-x-3">
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
               className="px-4 py-3 border border-solar-dark-300 dark:border-solar-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-solar-yellow-400 bg-white dark:bg-solar-dark-800 text-solar-dark-800 dark:text-white"
-            >
-              <option value="all">All Status</option>
-              <option value="online">Online</option>
-              <option value="offline">Offline</option>
-              <option value="warning">Warning</option>
-              <option value="error">Error</option>
-            </select>
+          >
+            <option value="all">All Status</option>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+            <option value="warning">Warning</option>
+            <option value="error">Error</option>
+          </select>
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
@@ -460,18 +460,18 @@ export default function DevicesPage() {
         </motion.div>
 
                  {/* Enhanced Device Grid/List */}
-         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.5, delay: 0.4 }}
            className={viewMode === 'grid' ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" : "space-y-4"}
-         >
+        >
            <AnimatePresence>
              {currentDevices.map((device, index) => (
-              <motion.div
-                key={device.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
+            <motion.div
+              key={device.id}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3, delay: index * 0.05 }}
                 layout
@@ -480,42 +480,42 @@ export default function DevicesPage() {
                    viewMode === 'list' ? 'flex-row items-center' : ''
                  }`} onClick={() => setSelectedDevice(device.id)}>
                    <CardHeader className={`pb-3 ${viewMode === 'list' ? 'flex-1' : ''}`}>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-3">
                         <div className="p-2 rounded-lg bg-solar-dark-100 dark:bg-solar-dark-800">
-                          {getDeviceIcon(device.type)}
+                      {getDeviceIcon(device.type)}
                         </div>
-                        <div>
-                          <CardTitle className="text-lg">{device.name}</CardTitle>
+                      <div>
+                        <CardTitle className="text-lg">{device.name}</CardTitle>
                           <div className="flex items-center space-x-2 text-sm text-solar-dark-600 dark:text-solar-dark-300">
                             <MapPin className="w-3 h-3" />
                             <span>{device.location}</span>
                           </div>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        {getStatusIcon(device.status)}
-                        <span className={`text-xs font-medium px-2 py-1 rounded-full ${getStatusBgColor(device.status)} ${getStatusColor(device.status)}`}>
-                          {device.status}
-                        </span>
                       </div>
                     </div>
-                  </CardHeader>
+                    <div className="flex items-center space-x-2">
+                      {getStatusIcon(device.status)}
+                      <span className={`text-xs font-medium px-2 py-1 rounded-full ${getStatusBgColor(device.status)} ${getStatusColor(device.status)}`}>
+                        {device.status}
+                      </span>
+                    </div>
+                  </div>
+                </CardHeader>
                                      <CardContent className={`${viewMode === 'list' ? 'flex-1' : 'flex-1'} flex flex-col`}>
                      <div className={`${viewMode === 'list' ? 'grid grid-cols-4 gap-4' : 'space-y-3'} flex-1`}>
-                       <div className="flex justify-between items-center">
-                         <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Power Usage</span>
-                         <span className="font-medium text-solar-dark-800 dark:text-white">
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Power Usage</span>
+                      <span className="font-medium text-solar-dark-800 dark:text-white">
                            {device.realTimePower.toFixed(2)} kW
-                         </span>
-                       </div>
-                       <div className="flex justify-between items-center">
-                         <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Efficiency</span>
-                         <span className="font-medium text-solar-dark-800 dark:text-white">
-                           {device.efficiency}%
-                         </span>
-                       </div>
-                       <div className="flex justify-between items-center">
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Efficiency</span>
+                      <span className="font-medium text-solar-dark-800 dark:text-white">
+                        {device.efficiency}%
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
                          <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Temperature</span>
                          <span className="font-medium text-solar-dark-800 dark:text-white">
                            {device.temperature.toFixed(1)}°C
@@ -525,42 +525,42 @@ export default function DevicesPage() {
                          <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Uptime</span>
                          <span className="font-medium text-solar-dark-800 dark:text-white">
                            {device.uptime}h
-                         </span>
+                      </span>
                        </div>
-                     </div>
-                     
+                    </div>
+                    
                      {/* Device Control - Always present but conditionally styled */}
                      <div className={`${viewMode === 'list' ? 'col-span-4' : ''} pt-3 border-t border-solar-dark-200 dark:border-solar-dark-700 mt-auto`}>
-                       <div className="flex items-center justify-between">
+                        <div className="flex items-center justify-between">
                          <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Power Control</span>
                          <div className="flex items-center space-x-2">
                            {device.type !== 'solar_panel' ? (
                              <>
-                               <Button
-                                 variant={deviceStates[device.id] ? "default" : "outline"}
-                                 size="sm"
+                          <Button
+                            variant={deviceStates[device.id] ? "default" : "outline"}
+                            size="sm"
                                  onClick={(e) => {
                                    e.stopPropagation();
                                    toggleDevice(device.id);
                                  }}
-                                 className={`flex items-center space-x-1 ${
-                                   deviceStates[device.id] 
-                                     ? 'bg-solar-green-500 hover:bg-solar-green-600 text-white' 
-                                     : 'text-solar-dark-600 dark:text-solar-dark-300'
-                                 }`}
-                               >
-                                 {deviceStates[device.id] ? (
-                                   <>
-                                     <Power className="w-3 h-3" />
-                                     <span>ON</span>
-                                   </>
-                                 ) : (
-                                   <>
-                                     <PowerOff className="w-3 h-3" />
-                                     <span>OFF</span>
-                                   </>
-                                 )}
-                               </Button>
+                            className={`flex items-center space-x-1 ${
+                              deviceStates[device.id] 
+                                ? 'bg-solar-green-500 hover:bg-solar-green-600 text-white' 
+                                : 'text-solar-dark-600 dark:text-solar-dark-300'
+                            }`}
+                          >
+                            {deviceStates[device.id] ? (
+                              <>
+                                <Power className="w-3 h-3" />
+                                <span>ON</span>
+                              </>
+                            ) : (
+                              <>
+                                <PowerOff className="w-3 h-3" />
+                                <span>OFF</span>
+                              </>
+                            )}
+                          </Button>
                                <Button
                                  variant="outline"
                                  size="sm"
@@ -576,17 +576,17 @@ export default function DevicesPage() {
                            ) : (
                              <div className="text-xs text-solar-dark-500 dark:text-solar-dark-400 italic">
                                Solar panels are always active
-                             </div>
-                           )}
+                      </div>
+                    )}
                          </div>
                        </div>
-                     </div>
-                   </CardContent>
-                </Card>
-              </motion.div>
-                         ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
            </AnimatePresence>
-         </motion.div>
+        </motion.div>
 
          {/* Pagination Controls */}
          {totalPages > 1 && (
@@ -671,38 +671,38 @@ export default function DevicesPage() {
                 <div className="flex items-center justify-between p-3 bg-solar-green-50 dark:bg-solar-green-900/10 rounded-lg">
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-solar-green-500" />
-                    <div>
+                <div>
                       <p className="font-medium text-solar-dark-800 dark:text-white">Online Devices</p>
                       <p className="text-sm text-solar-dark-600 dark:text-solar-dark-300">{onlineDevices} devices</p>
                     </div>
-                  </div>
+                </div>
                   <div className="text-right">
                     <p className="font-bold text-solar-green-600">{((onlineDevices / totalDevices) * 100).toFixed(1)}%</p>
-                  </div>
                 </div>
+              </div>
                 <div className="flex items-center justify-between p-3 bg-solar-amber-50 dark:bg-solar-amber-900/10 rounded-lg">
                   <div className="flex items-center space-x-3">
                     <AlertTriangle className="w-5 h-5 text-solar-amber-500" />
-                    <div>
+                <div>
                       <p className="font-medium text-solar-dark-800 dark:text-white">Warning Devices</p>
                       <p className="text-sm text-solar-dark-600 dark:text-solar-dark-300">{warningDevices} devices</p>
                     </div>
-                  </div>
+                </div>
                   <div className="text-right">
                     <p className="font-bold text-solar-amber-600">{((warningDevices / totalDevices) * 100).toFixed(1)}%</p>
-                  </div>
                 </div>
+              </div>
                 <div className="flex items-center justify-between p-3 bg-red-50 dark:bg-red-900/10 rounded-lg">
                   <div className="flex items-center space-x-3">
                     <XCircle className="w-5 h-5 text-red-500" />
-                    <div>
+                <div>
                       <p className="font-medium text-solar-dark-800 dark:text-white">Error Devices</p>
                       <p className="text-sm text-solar-dark-600 dark:text-solar-dark-300">{errorDevices} devices</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="font-bold text-red-600">{((errorDevices / totalDevices) * 100).toFixed(1)}%</p>
-                  </div>
+                </div>
                 </div>
               </div>
             </CardContent>
@@ -717,7 +717,7 @@ export default function DevicesPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between">
                   <span className="text-sm text-solar-dark-600 dark:text-solar-dark-300">Overall Health</span>
                   <span className="text-lg font-bold text-solar-green-600">Excellent</span>
                 </div>
@@ -732,7 +732,7 @@ export default function DevicesPage() {
                   <div className="text-center p-3 bg-solar-green-50 dark:bg-solar-green-900/10 rounded-lg">
                     <p className="text-sm text-solar-dark-600">Uptime</p>
                     <p className="text-lg font-bold text-solar-green-600">99.8%</p>
-                  </div>
+                </div>
                 </div>
               </div>
             </CardContent>
